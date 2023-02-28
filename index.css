@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+@font-face {
+    font-family: Bohemian;
+    src: url(Assets/fonts/Bohemian-Typewriter.ttf);
+}
+
+body {
+    background-image: url(https://images.pexels.com/photos/3826435/pexels-photo-3826435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section {
+    min-height: 100dvh;
+    min-height: 100svh;
+}
+
+#app {
+    border: 20px solid transparent;
+    border-image-source: url(Assets/imgs/wooden-frame.png);
+    border-image-slice: 50;
+    background-image: linear-gradient(hsla(63, 40%, 30%, 0.3), hsla(63, 20%, 15%, 0.3)), url(Assets/imgs/Cork001_1K_Color.jpg);
+}
+
+h1 {
+    width: fit-content;
+    font-family: Bohemian;
+    color: #000000;
+    font-weight: 600;
+    text-decoration: underline;
+    text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2), 0px -5px 35px rgba(255, 255, 255, 0.3);
+    background: #454545;
+    border-radius: 30px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-image: url(Assets/imgs/header-pattern.svg);
+    background-size: cover;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5), 0px 0px 50px 10px rgba(255, 255, 255, 0.1);
+}
+
+#formBox {
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.5), 0px 0px 50px 10px rgba(255, 255, 255, 0.1), 0px 0px 9px 0px rgba(255, 255, 255, 0.5);
+    background-image: url(Assets/imgs/Paper.jpg);
+    background-size: cover;
+}
+
+#resetColorBtn,
+#inputImportant {
+    box-shadow: inset 5px 5px 15px 0px rgba(3, 3, 3, 0.2), inset 5px 5px 15px 15px rgba(3, 3, 3, 0.1), 0px 0px 15px 0px rgba(3, 3, 3, 0.5);
+}
+
+#filterPlacement .btn {
+    box-shadow: -10px 0px 13px -7px rgba(0, 0, 0, 0.5), 10px 0px 13px -7px rgba(0, 0, 0, 0.5), 5px 5px 15px 5px rgba(0, 0, 0, 0.27), inset 5px 5px 15px 0px rgba(249, 241, 255, 0.29);
+}
+
+#tasksBox {
+    background: rgba(122, 78, 12, 0.5) url(Assets/imgs/tile.jpg);
+    border: 10px solid transparent;
+    border-image-source: url('https://3.imimg.com/data3/ON/IP/MY-10659985/wooden-photo-frame-500x500.png');
+    border-image-slice: 10;
+}
+
+#inputText:focus::placeholder {
+    color: hsla(0, 0%, 75%, 0.75);
+}
+
+.card button.btn {
+    opacity: 0;
+    transition: opacity 250ms ease;
+}
+
+.card:hover button.btn {
+    transition: 550ms ease;
+    transition: opacity 550ms ease;
+    opacity: 1;
+}
+
+.task-main {
+    height: 200px;
+    overflow: auto;
+    font-family: 'Roboto Slab';
+}
+
+@keyframes newTaskAnim {
+    0% {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes inputErrorAnim {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60% {
+        transform: translateX(5px);
+    }
+
+    80% {
+        transform: translateX(4px);
+    }
+
+    90% {
+        transform: translateX(-4px);
+    }
+}

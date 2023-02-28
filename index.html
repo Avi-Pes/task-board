@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <!-- https://ionic.io/ionicons -->
+
+    <title>My Task Board - Avi Pesach</title>
+</head>
+
+<body>
+
+    <section id="page" class="container my-5 p-5">
+        <!--! include a frame border somehow -->
+        <div id="app" class="p-5">
+
+
+            <div id="boardTopRow" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 align-items-center g-3">
+
+                <header class="col col-lg-5 p-3">
+                    <h1 class="mx-auto p-3 my-5 my-md-0">My Task Board</h1>
+                </header>
+
+                <div id="formBox" class="col col-lg-5 bg-secondary bg-opacity-75 rounded p-2">
+                    <form id="taskForm">
+
+                        <div class="form-floating pb-3">
+                            <textarea class="form-control" placeholder="e.g. Invite Karen to dinner"
+                                id="inputText"></textarea>
+                            <label for="inputText">Add a task...</label>
+                        </div>
+
+                        <div class="form-floating pb-3">
+                            <input type="text" class="form-control" id="inputTitle" placeholder="e.g. Call Karen">
+                            <label for="inputTitle">title <span class="blockquote-footer">(optional)</span></label>
+                        </div>
+
+                        <div class="row">
+
+                            <div class="col-6 form-floating pb-3">
+                                <input type="date" class="form-control" id="inputDate">
+                                <label for="inputDate">End Date</label>
+                            </div>
+
+                            <div class="col-6 form-floating pb-3">
+                                <input type="time" class="form-control" id="inputTime">
+                                <label for="inputTime">End Time</label>
+                            </div>
+                        </div>
+
+
+                        <div class="d-flex align-items-center justify-content-around pb-3">
+                            <!-- important star -->
+                            <div class="form-check form-switch ">
+                                <input class="form-check-input" type="checkbox" role="switch" id="inputImportant"
+                                    title="Mark as important">
+                                <label class="form-check-label" for="inputImportant"><ion-icon id="inputStar"
+                                        name="star"></ion-icon>
+                                </label>
+                            </div>
+                            <!-- color -->
+                            <div class="d-flex gap-2 align-items-center">
+                                <input type="color" class="form-control form-control-color bg-secondary"
+                                    id="inputColorPicker" value="#f8f8f8" title="Choose your color">
+                                <button id="resetColorBtn" type="button"
+                                    class="btn btn-sm btn-outline-warning">Default</button>
+                            </div>
+                        </div>
+
+                        <div class="d-flex justify-content-around">
+                            <button id="addBtn" type="button" class="btn btn-warning shadow-sm">Add Task</button>
+                            <button id="clearFormBtn" type="button"
+                                class="btn btn-dark btn-outline-warning shadow-sm">Clear
+                                Form</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <div id="filterPlacement"
+                    class="col col-lg-2 rounded d-flex flex-column flex-md-row flex-lg-column align-items-center justify-content-between gap-4 gap-lg-3 mt-5 mt-md-0 p-3">
+                    <h5><span class="badge bg-dark text-decoration-underline py-3 px-5">Filer:</span></h5>
+                    <button id="filterAll" class="btn btn-secondary">All Tasks</button>
+                    <button id="filterImpBtn" class="btn btn-secondary">Important</button>
+                    <button id="filterColorBtn" class="btn btn-secondary">Colored</button>
+                </div>
+
+            </div>
+
+            <main id="tasksBox" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-3 p-3 p-xl-5 my-5">
+            </main>
+
+        </div>
+    </section>
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <script src="Task-constructor.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
