@@ -101,6 +101,7 @@ function renderTasks(arrOfTasks, isLastAnimated = false) {
 
 
     function printEmpty() {
+        DOM.tasksBox.innerHTML = ""
         const card = document.createElement("div")
         card.classList.add("card", "text-bg-dark", "text-center", "fw-bold", "w-100", "p-3")
         card.innerText = "Oops! No tasks to show yet..."
