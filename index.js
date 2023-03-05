@@ -101,6 +101,7 @@ function renderTasks(arrOfTasks = gTasks, isLastAnimated = false) {
 
 
     function printEmpty() {
+        if (arrOfTasks.length !== 0) return
         DOM.tasksBox.innerHTML = ""
         const card = document.createElement("div")
         card.classList.add("card", "text-bg-dark", "text-center", "fw-bold", "w-100", "p-3")
