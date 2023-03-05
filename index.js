@@ -87,7 +87,7 @@ function addTask() {
     window.localStorage.setItem('tasks', JSON.stringify(gTasks))
 }
 
-function renderTasks(arrOfTasks, isLastAnimated = false) {
+function renderTasks(arrOfTasks = gTasks, isLastAnimated = false) {
     if (!Array.isArray(arrOfTasks)) return
     if (arrOfTasks.length === 0) {
         printEmpty()
@@ -205,6 +205,7 @@ function renderTasks(arrOfTasks, isLastAnimated = false) {
         }
 
         function getSvgPin(color) {
+            if (!color) return
             const hslArray = hexToHSL(color, true)
             const hue = hslArray[0]
             const colors = [`hsl(${hue}, 29%, 28%)`, `hsl(${hue}, 56%, 53%)`, `hsl(${hue}, 72%, 59%)`, `hsl(${hue}, 72%, 67%)`,]
